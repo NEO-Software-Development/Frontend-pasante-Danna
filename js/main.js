@@ -36,9 +36,9 @@ function actualizarTareas(tareas) {
   ul.innerHTML = ''; // Limpia la lista antes de agregar las tareas
 
   if (tareas.length === 0) {
-    empty.style.display = "none";
-  } else {
     empty.style.display = "block";
+  } else {
+    empty.style.display = "none";
     tareas.forEach((tarea) => {
       const li = createListItem(tarea.nombre, tarea.id);
       ul.appendChild(li);

@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.json()); // Middleware para analizar el cuerpo de las solicitudes JSON
+app.use(express.json()); // Middleware para analizar las solicitudes JSON
 app.use(cors());
 
 // Conexión a MySQL
@@ -21,11 +21,6 @@ db.connect((error) => {
   } else {
     console.log('Conexión exitosa a la base de datos');
   }
-});
-// Definir una ruta para la página de inicio (ruta raíz)
-app.get('/', (req, res) => {
-  // Tu código para manejar la página de inicio
-  res.send('¡Bienvenido a mi aplicación!');
 });
 // Ruta para obtener todas las tareas
 app.get('/tareas', (req, res) => {
